@@ -13,6 +13,17 @@
 		1D3E12BD23F9D2D8005E65F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D3E12BB23F9D2D8005E65F2 /* Main.storyboard */; };
 		1D3E12BF23F9D2DF005E65F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D3E12BE23F9D2DF005E65F2 /* Assets.xcassets */; };
 		1D3E12C223F9D2DF005E65F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D3E12C023F9D2DF005E65F2 /* LaunchScreen.storyboard */; };
+		1D61944B240B102A0017460D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D61944A240B102A0017460D /* RegisterViewController.swift */; };
+		1D61944D240B10450017460D /* ChidrenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D61944C240B10450017460D /* ChidrenViewController.swift */; };
+		1D61944F240B10500017460D /* CreateChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D61944E240B10500017460D /* CreateChildViewController.swift */; };
+		1D619451240B10A60017460D /* CreateChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D619450240B10A60017460D /* CreateChallengeViewController.swift */; };
+		1D619454240B128D0017460D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D619453240B128D0017460D /* User.swift */; };
+		1D619456240B13130017460D /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D619455240B13130017460D /* Challenge.swift */; };
+		1D619458240B131D0017460D /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D619457240B131D0017460D /* Task.swift */; };
+		1D61945A240B18B40017460D /* ChildTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D619459240B18B40017460D /* ChildTableViewCell.swift */; };
+		1D61945C240B200D0017460D /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D61945B240B200D0017460D /* ChallengeViewController.swift */; };
+		1D619460240B367B0017460D /* Switcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D61945F240B367B0017460D /* Switcher.swift */; };
+		1D619462240B49510017460D /* ChallengeTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D619461240B49510017460D /* ChallengeTaskTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +35,17 @@
 		1D3E12BE23F9D2DF005E65F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D3E12C123F9D2DF005E65F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D3E12C323F9D2DF005E65F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D61944A240B102A0017460D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		1D61944C240B10450017460D /* ChidrenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChidrenViewController.swift; sourceTree = "<group>"; };
+		1D61944E240B10500017460D /* CreateChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChildViewController.swift; sourceTree = "<group>"; };
+		1D619450240B10A60017460D /* CreateChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChallengeViewController.swift; sourceTree = "<group>"; };
+		1D619453240B128D0017460D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1D619455240B13130017460D /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		1D619457240B131D0017460D /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		1D619459240B18B40017460D /* ChildTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildTableViewCell.swift; sourceTree = "<group>"; };
+		1D61945B240B200D0017460D /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
+		1D61945F240B367B0017460D /* Switcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Switcher.swift; sourceTree = "<group>"; };
+		1D619461240B49510017460D /* ChallengeTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTaskTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +78,34 @@
 		1D3E12B423F9D2D8005E65F2 /* owlki */ = {
 			isa = PBXGroup;
 			children = (
+				1D619452240B12000017460D /* DAO */,
 				1D3E12B523F9D2D8005E65F2 /* AppDelegate.swift */,
 				1D3E12B723F9D2D8005E65F2 /* SceneDelegate.swift */,
+				1D61945F240B367B0017460D /* Switcher.swift */,
 				1D3E12B923F9D2D8005E65F2 /* ViewController.swift */,
 				1D3E12BB23F9D2D8005E65F2 /* Main.storyboard */,
+				1D619461240B49510017460D /* ChallengeTaskTableViewCell.swift */,
+				1D61945B240B200D0017460D /* ChallengeViewController.swift */,
+				1D619459240B18B40017460D /* ChildTableViewCell.swift */,
+				1D619450240B10A60017460D /* CreateChallengeViewController.swift */,
+				1D61944C240B10450017460D /* ChidrenViewController.swift */,
+				1D61944E240B10500017460D /* CreateChildViewController.swift */,
+				1D61944A240B102A0017460D /* RegisterViewController.swift */,
 				1D3E12BE23F9D2DF005E65F2 /* Assets.xcassets */,
 				1D3E12C023F9D2DF005E65F2 /* LaunchScreen.storyboard */,
 				1D3E12C323F9D2DF005E65F2 /* Info.plist */,
 			);
 			path = owlki;
+			sourceTree = "<group>";
+		};
+		1D619452240B12000017460D /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				1D619453240B128D0017460D /* User.swift */,
+				1D619455240B13130017460D /* Challenge.swift */,
+				1D619457240B131D0017460D /* Task.swift */,
+			);
+			path = DAO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +179,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D61944D240B10450017460D /* ChidrenViewController.swift in Sources */,
+				1D619456240B13130017460D /* Challenge.swift in Sources */,
+				1D619458240B131D0017460D /* Task.swift in Sources */,
+				1D61944F240B10500017460D /* CreateChildViewController.swift in Sources */,
+				1D61945A240B18B40017460D /* ChildTableViewCell.swift in Sources */,
 				1D3E12BA23F9D2D8005E65F2 /* ViewController.swift in Sources */,
+				1D619451240B10A60017460D /* CreateChallengeViewController.swift in Sources */,
+				1D619454240B128D0017460D /* User.swift in Sources */,
+				1D619462240B49510017460D /* ChallengeTaskTableViewCell.swift in Sources */,
 				1D3E12B623F9D2D8005E65F2 /* AppDelegate.swift in Sources */,
+				1D619460240B367B0017460D /* Switcher.swift in Sources */,
 				1D3E12B823F9D2D8005E65F2 /* SceneDelegate.swift in Sources */,
+				1D61945C240B200D0017460D /* ChallengeViewController.swift in Sources */,
+				1D61944B240B102A0017460D /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
