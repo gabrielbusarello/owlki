@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y9H-CS-97k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y9H-CS-97k">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -567,6 +567,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00M-I5-B4A">
                                         <rect key="frame" x="104" y="275" width="30" height="30"/>
                                         <state key="normal" title="+"/>
+                                        <connections>
+                                            <segue destination="BbI-o7-48G" kind="show" id="DbS-zJ-hWs"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="6fm-0a-9Vs">
                                         <rect key="frame" x="0.0" y="34" width="374" height="196"/>
@@ -602,12 +605,21 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="LSh-HY-zyp">
-                                                <rect key="frame" x="0.0" y="28" width="330" height="44"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="76" id="LSh-HY-zyp">
+                                                <rect key="frame" x="0.0" y="28" width="330" height="76"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LSh-HY-zyp" id="cH5-Gb-YCQ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="330" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="330" height="76"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tarefa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqH-Hy-pBs">
+                                                            <rect key="frame" x="16" y="23" width="306" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                         </prototypes>
@@ -648,6 +660,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5oD-Mk-0il" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2063.768115942029" y="1567.6339285714284"/>
+        </scene>
+        <!--Create Task View Controller-->
+        <scene sceneID="NZn-n9-GNs">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qGC-4g-7W5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="BbI-o7-48G" customClass="CreateTaskViewController" customModule="owlki" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FHc-HV-Zmh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="XUv-dZ-eUd">
+                                <rect key="frame" x="20" y="350" width="374" height="196"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastrar Tarefa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLE-cT-NsL">
+                                        <rect key="frame" x="81.5" y="0.0" width="211.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BH6-Dv-Z8r">
+                                        <rect key="frame" x="0.0" y="84" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71E-cg-Yes">
+                                        <rect key="frame" x="160" y="166" width="54" height="30"/>
+                                        <state key="normal" title="Salvar"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="71E-cg-Yes" firstAttribute="top" secondItem="BH6-Dv-Z8r" secondAttribute="bottom" constant="48" id="0uf-gC-N1l"/>
+                                    <constraint firstAttribute="trailing" secondItem="71E-cg-Yes" secondAttribute="trailing" constant="160" id="225-n3-DVb"/>
+                                    <constraint firstAttribute="trailing" secondItem="BH6-Dv-Z8r" secondAttribute="trailing" id="GLh-Io-hPY"/>
+                                    <constraint firstItem="BH6-Dv-Z8r" firstAttribute="leading" secondItem="XUv-dZ-eUd" secondAttribute="leading" id="cUq-jQ-4CT"/>
+                                    <constraint firstItem="71E-cg-Yes" firstAttribute="leading" secondItem="XUv-dZ-eUd" secondAttribute="leading" constant="160" id="wOC-RT-6ON"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Vf8-8N-N5j" firstAttribute="trailing" secondItem="XUv-dZ-eUd" secondAttribute="trailing" constant="20" id="BqJ-R5-UVK"/>
+                            <constraint firstItem="XUv-dZ-eUd" firstAttribute="leading" secondItem="Vf8-8N-N5j" secondAttribute="leading" constant="20" id="KCr-KX-vut"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Vf8-8N-N5j"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="KqS-wB-3XG"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="3431.884057971015" y="1567.6339285714284"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4J6-7R-Wdb">

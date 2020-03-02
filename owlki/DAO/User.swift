@@ -14,19 +14,19 @@ class User {
     let name: String;
     let user: String;
     let password: String;
-    var idPai: Int?
+    var idFather: Int?
 
-    init (id: Int, name: String, user: String, password: String, idPai: Int?) {
+    init (id: Int, name: String, user: String, password: String, idFather: Int?) {
         self.id = id;
         self.name = name;
         self.user = user;
         self.password = password;
-        self.idPai = idPai;
+        self.idFather = idFather;
     }
     
     // Convenience initializer
     convenience init(id: Int, name: String, user: String, password: String) {
-        self.init(id: id, name: name, user: user, password: password, idPai: nil);
+        self.init(id: id, name: name, user: user, password: password, idFather: nil);
     }
 
 }
@@ -40,7 +40,7 @@ class UserDAO {
             User(id: 3, name: "Luan", user: "luan", password: "Luan"),
             User(id: 4, name: "Vinícius", user: "vinicius", password: "Vinícius"),
             User(id: 5, name: "Walter", user: "waltinho", password: "Walter"),
-            User(id: 6, name: "Walter Junior", user: "waltinhoJJ", password: "Walter", idPai: 5)
+            User(id: 6, name: "Walter Junior", user: "waltinhoJJ", password: "Walter", idFather: 5)
         ];
     }
     
