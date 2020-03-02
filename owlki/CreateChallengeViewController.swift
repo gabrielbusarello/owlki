@@ -8,14 +8,45 @@
 
 import UIKit
 
-class CreateChallengeViewController: UIViewController {
+class CreateChallengeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+    @IBOutlet weak var reward: UITextField!
+    @IBOutlet weak var deadLine: UITextField!
+    @IBOutlet weak var taskList: UITableView!
+
+    var challenge: Challenge?;
+    var tasks = [Task]();
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        taskList.delegate = self
+        taskList.dataSource = self
+
+        self.challenge = ChallengeDAO.getList().first!;
+        self.tasks = TaskDAO.getList()
         // Do any additional setup after loading the view.
+        self.reward.text? = self.challenge?.reward ?? "";
+        self.deadLine.text? = self.challenge?.deadLine ?? "";
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tasks.count;
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "taskColumn", for: indexPath);
+
+        if let taskCell = cell as? CreateChallengeTaskTableViewCell {
+            let task = tasks[indexPath.row];
+            
+            taskCell.task.text = task.name;
+            
+            return taskCell;
+        }
+
+        return cell;
+    }
 
     /*
     // MARK: - Navigation
