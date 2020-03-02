@@ -15,10 +15,20 @@ class ChallengeViewController: UIViewController {
     @IBOutlet weak var reward: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var taskList: UITableView!
+    
+    var challenge: Challenge?;
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.challenge = ChallengeDAO.getList().first!;
+        
+        self.reward.text? = self.challenge?.reward ?? "";
+        self.deadLine.text? = self.challenge?.deadLine ?? "";
+        self.conclusion.text = self.challenge?.percent ?? "";
+        self.name.text = self.challenge?.nameUser ?? "";
 
+        
         // Do any additional setup after loading the view.
     }
     
