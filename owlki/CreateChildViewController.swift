@@ -18,11 +18,36 @@ class CreateChildViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+       
     }
     
-
+    @IBAction func cadastra(_ sender: Any) {
+        if (name.text == "" && user.text == "" && password.text == "") {
+            let alert = UIAlertController(title: "Alerta!", message: "Preencha todos os campos", preferredStyle: .alert);
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }else if(name.text == ""){
+            let alert = UIAlertController(title: "Alerta!", message: "O campo nome deve ser preenchido", preferredStyle: .alert);
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }else if(user.text == ""){
+            let alert = UIAlertController(title: "Alerta!", message: "O campo usuário deve ser preenchido", preferredStyle: .alert);
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }else if(password.text == ""){
+            let alert = UIAlertController(title: "Alerta!", message: "O campo senha deve ser preenchido", preferredStyle: .alert);
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
+        else {
+            /*UserDefaults.standard.set(true, forKey: "status");
+            UserDefaults.standard.set(false, forKey: "child");
+            Switcher.updateRootVC(vcInstance: self, sender);
+            */
+        }
+    }
+    
+    
     /*
     // MARK: - Navigation
 
