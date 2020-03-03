@@ -372,35 +372,37 @@
                                         <rect key="frame" x="8" y="269" width="358" height="497"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskColumn" rowHeight="73" id="bbX-U9-IM5" customClass="ChallengeTaskTableViewCell" customModule="owlki" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="358" height="73"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskColumn" rowHeight="105" id="bbX-U9-IM5" customClass="ChallengeTaskTableViewCell" customModule="owlki" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="358" height="105"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bbX-U9-IM5" id="x0h-SF-5VG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="358" height="73"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="358" height="105"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tarefa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hm2-tR-3kY">
-                                                            <rect key="frame" x="20" y="26" width="53" height="24"/>
+                                                            <rect key="frame" x="28" y="11" width="53" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sel-VE-zDX">
-                                                            <rect key="frame" x="285" y="24" width="54" height="24"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                            <nil key="textColor"/>
+                                                            <rect key="frame" x="298" y="13" width="40" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="Sel-VE-zDX" firstAttribute="top" secondItem="x0h-SF-5VG" secondAttribute="top" constant="24" id="6YH-bx-l3d"/>
-                                                        <constraint firstItem="hm2-tR-3kY" firstAttribute="leading" secondItem="x0h-SF-5VG" secondAttribute="leadingMargin" id="CbM-5R-qMP"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Sel-VE-zDX" secondAttribute="bottom" constant="25" id="Q2p-ya-VNN"/>
-                                                        <constraint firstItem="hm2-tR-3kY" firstAttribute="top" secondItem="x0h-SF-5VG" secondAttribute="topMargin" constant="15" id="dS5-I0-ff2"/>
-                                                        <constraint firstAttribute="bottomMargin" secondItem="hm2-tR-3kY" secondAttribute="bottom" constant="12" id="ff0-87-h8b"/>
-                                                        <constraint firstItem="Sel-VE-zDX" firstAttribute="leading" secondItem="hm2-tR-3kY" secondAttribute="trailing" constant="212" id="wsl-nD-QuA"/>
+                                                        <constraint firstItem="hm2-tR-3kY" firstAttribute="leading" secondItem="x0h-SF-5VG" secondAttribute="leadingMargin" constant="8" id="8LW-qH-9iN"/>
+                                                        <constraint firstItem="hm2-tR-3kY" firstAttribute="top" secondItem="x0h-SF-5VG" secondAttribute="topMargin" id="8Mf-H0-Yot"/>
+                                                        <constraint firstItem="Sel-VE-zDX" firstAttribute="top" secondItem="x0h-SF-5VG" secondAttribute="topMargin" constant="2" id="FHD-Td-7qs"/>
+                                                        <constraint firstItem="Sel-VE-zDX" firstAttribute="trailing" secondItem="x0h-SF-5VG" secondAttribute="trailingMargin" id="e7u-jB-lg2"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="status" destination="Sel-VE-zDX" id="dGB-0F-UIU"/>
+                                                    <outlet property="task" destination="hm2-tR-3kY" id="FoI-sy-eTY"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>

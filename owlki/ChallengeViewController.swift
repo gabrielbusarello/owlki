@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChallengeViewController: UIViewController {
+class ChallengeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var conclusion: UILabel!
     @IBOutlet weak var deadLine: UILabel!
@@ -16,23 +16,52 @@ class ChallengeViewController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var taskList: UITableView!
     
+    var tasks = [Task]();
+    
     var challenge: Challenge?;
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tasks = TaskDAO.getList()
+        
+        taskList.delegate = self
+        taskList.dataSource = self
+        
         self.challenge = ChallengeDAO.getList().first!;
         
         self.reward.text? = self.challenge?.reward ?? "";
         self.deadLine.text? = self.challenge?.deadLine ?? "";
-        self.conclusion.text = self.challenge?.percent ?? "";
-        self.name.text = self.challenge?.nameUser ?? "";
+        self.conclusion.text? = self.challenge?.percent ?? "";
+        self.name.text? = self.challenge?.nameUser ?? "";
 
         
         // Do any additional setup after loading the view.
     }
     
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tasks.count;
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = taskList.dequeueReusableCell(withIdentifier: "taskColumn", for: indexPath);
+        
+        if let taskCell = cell as? ChallengeTaskTableViewCell {
+            let task = tasks[indexPath.row];
+            
+            taskCell.task.text = task.name;
+            taskCell.status.text = task.status;
+            
+            return taskCell;
+        }
+        
+        return cell;
+    }
+         
+         
+    
+    
     /*
     // MARK: - Navigation
 

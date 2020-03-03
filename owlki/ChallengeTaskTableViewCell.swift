@@ -9,7 +9,10 @@
 import UIKit
 
 class ChallengeTaskTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var task: UILabel!
+    @IBOutlet weak var status: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
