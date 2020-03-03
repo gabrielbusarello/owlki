@@ -24,6 +24,8 @@
 		1D61945C240B200D0017460D /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D61945B240B200D0017460D /* ChallengeViewController.swift */; };
 		1D619460240B367B0017460D /* Switcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D61945F240B367B0017460D /* Switcher.swift */; };
 		1D619462240B49510017460D /* ChallengeTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D619461240B49510017460D /* ChallengeTaskTableViewCell.swift */; };
+		3F0F36A4240DB7DB00ACBD0B /* CreateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F36A3240DB7DB00ACBD0B /* CreateTaskViewController.swift */; };
+		3F0F36A6240DC99600ACBD0B /* CreateChallengeTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F36A5240DC99600ACBD0B /* CreateChallengeTaskTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		1D61945B240B200D0017460D /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		1D61945F240B367B0017460D /* Switcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Switcher.swift; sourceTree = "<group>"; };
 		1D619461240B49510017460D /* ChallengeTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTaskTableViewCell.swift; sourceTree = "<group>"; };
+		3F0F36A3240DB7DB00ACBD0B /* CreateTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskViewController.swift; sourceTree = "<group>"; };
+		3F0F36A5240DC99600ACBD0B /* CreateChallengeTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChallengeTaskTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,22 +82,24 @@
 		1D3E12B423F9D2D8005E65F2 /* owlki */ = {
 			isa = PBXGroup;
 			children = (
-				1D619452240B12000017460D /* DAO */,
+				1D3E12C323F9D2DF005E65F2 /* Info.plist */,
 				1D3E12B523F9D2D8005E65F2 /* AppDelegate.swift */,
+				1D619461240B49510017460D /* ChallengeTaskTableViewCell.swift */,
+				1D61945B240B200D0017460D /* ChallengeViewController.swift */,
+				1D61944C240B10450017460D /* ChidrenViewController.swift */,
+				1D619459240B18B40017460D /* ChildTableViewCell.swift */,
+				3F0F36A5240DC99600ACBD0B /* CreateChallengeTaskTableViewCell.swift */,
+				1D619450240B10A60017460D /* CreateChallengeViewController.swift */,
+				1D61944E240B10500017460D /* CreateChildViewController.swift */,
+				3F0F36A3240DB7DB00ACBD0B /* CreateTaskViewController.swift */,
+				1D61944A240B102A0017460D /* RegisterViewController.swift */,
 				1D3E12B723F9D2D8005E65F2 /* SceneDelegate.swift */,
 				1D61945F240B367B0017460D /* Switcher.swift */,
 				1D3E12B923F9D2D8005E65F2 /* ViewController.swift */,
-				1D3E12BB23F9D2D8005E65F2 /* Main.storyboard */,
-				1D619461240B49510017460D /* ChallengeTaskTableViewCell.swift */,
-				1D61945B240B200D0017460D /* ChallengeViewController.swift */,
-				1D619459240B18B40017460D /* ChildTableViewCell.swift */,
-				1D619450240B10A60017460D /* CreateChallengeViewController.swift */,
-				1D61944C240B10450017460D /* ChidrenViewController.swift */,
-				1D61944E240B10500017460D /* CreateChildViewController.swift */,
-				1D61944A240B102A0017460D /* RegisterViewController.swift */,
 				1D3E12BE23F9D2DF005E65F2 /* Assets.xcassets */,
+				1D619452240B12000017460D /* DAO */,
 				1D3E12C023F9D2DF005E65F2 /* LaunchScreen.storyboard */,
-				1D3E12C323F9D2DF005E65F2 /* Info.plist */,
+				1D3E12BB23F9D2D8005E65F2 /* Main.storyboard */,
 			);
 			path = owlki;
 			sourceTree = "<group>";
@@ -193,6 +199,8 @@
 				1D3E12B823F9D2D8005E65F2 /* SceneDelegate.swift in Sources */,
 				1D61945C240B200D0017460D /* ChallengeViewController.swift in Sources */,
 				1D61944B240B102A0017460D /* RegisterViewController.swift in Sources */,
+				3F0F36A6240DC99600ACBD0B /* CreateChallengeTaskTableViewCell.swift in Sources */,
+				3F0F36A4240DB7DB00ACBD0B /* CreateTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
