@@ -26,6 +26,7 @@
 		1D619462240B49510017460D /* ChallengeTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D619461240B49510017460D /* ChallengeTaskTableViewCell.swift */; };
 		3F0F36A4240DB7DB00ACBD0B /* CreateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F36A3240DB7DB00ACBD0B /* CreateTaskViewController.swift */; };
 		3F0F36A6240DC99600ACBD0B /* CreateChallengeTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F36A5240DC99600ACBD0B /* CreateChallengeTaskTableViewCell.swift */; };
+		3F9F772A240F27FA000EC4B2 /* KeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9F7729240F27FA000EC4B2 /* KeyboardExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		1D619461240B49510017460D /* ChallengeTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTaskTableViewCell.swift; sourceTree = "<group>"; };
 		3F0F36A3240DB7DB00ACBD0B /* CreateTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskViewController.swift; sourceTree = "<group>"; };
 		3F0F36A5240DC99600ACBD0B /* CreateChallengeTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChallengeTaskTableViewCell.swift; sourceTree = "<group>"; };
+		3F9F7729240F27FA000EC4B2 /* KeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				1D3E12B723F9D2D8005E65F2 /* SceneDelegate.swift */,
 				1D61945F240B367B0017460D /* Switcher.swift */,
 				1D3E12B923F9D2D8005E65F2 /* ViewController.swift */,
+				3F9F7729240F27FA000EC4B2 /* KeyboardExtension.swift */,
 				1D3E12BE23F9D2DF005E65F2 /* Assets.xcassets */,
 				1D619452240B12000017460D /* DAO */,
 				1D3E12C023F9D2DF005E65F2 /* LaunchScreen.storyboard */,
@@ -187,6 +190,7 @@
 			files = (
 				1D61944D240B10450017460D /* ChidrenViewController.swift in Sources */,
 				1D619456240B13130017460D /* Challenge.swift in Sources */,
+				3F9F772A240F27FA000EC4B2 /* KeyboardExtension.swift in Sources */,
 				1D619458240B131D0017460D /* Task.swift in Sources */,
 				1D61944F240B10500017460D /* CreateChildViewController.swift in Sources */,
 				1D61945A240B18B40017460D /* ChildTableViewCell.swift in Sources */,
@@ -345,6 +349,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N94252X8J4;
 				INFOPLIST_FILE = owlki/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -362,6 +367,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N94252X8J4;
 				INFOPLIST_FILE = owlki/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

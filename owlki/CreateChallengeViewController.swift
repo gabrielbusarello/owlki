@@ -24,13 +24,18 @@ class CreateChallengeViewController: UIViewController, UITableViewDataSource, UI
         taskList.dataSource = self
 
         self.challenge = ChallengeDAO.getList().first!;
-        self.tasks = TaskDAO.getList()
+//        self.tasks = TaskDAO.getList()
         // Do any additional setup after loading the view.
+        TaskDAO.getTasks { (tasks) in self.tasks = tasks; self.taskList.reloadData(); }
+
         self.reward.text? = self.challenge?.reward ?? "";
         self.deadLine.text? = self.challenge?.deadLine ?? "";
+
+        self.hideKeyboardWhenTappedAround();
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(tasks.count);
         return tasks.count;
     }
     
@@ -39,7 +44,7 @@ class CreateChallengeViewController: UIViewController, UITableViewDataSource, UI
 
         if let taskCell = cell as? CreateChallengeTaskTableViewCell {
             let task = tasks[indexPath.row];
-            
+            print(task);
             taskCell.task.text = task.name;
             
             return taskCell;

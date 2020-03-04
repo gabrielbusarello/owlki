@@ -24,22 +24,6 @@ class Task {
 
 }
 
-class TaskJson {
-
-    let id: Int;
-    let name: String;
-    let status: String;
-    let idChallenge: Int;
-
-    init (json: [String: AnyObject]) {
-        self.id = json["id"] as? Int ?? 0;
-        self.name = json["name"] as? String ?? "";
-        self.status =  json["status"] as? String ?? "";
-        self.idChallenge =  json["idChallenge"] as? Int ?? 0;
-    }
-
-}
-
 class TaskDAO {
     
     static func getList() -> [Task] {
@@ -49,9 +33,9 @@ class TaskDAO {
         ];
     }
 
-    static func getTasks (callback: @escaping ((TaskJson) -> Void)) {
+    static func getTasks (callback: @escaping (([Task]) -> Void)) {
         
-        let endpoint: String = "https://telegramjesidioapp.mybluemix.net/owlkitasks?_id=task1"
+        let endpoint: String = "https://telegramjesidioapp.mybluemix.net/owlkitasks/all"
         
         guard let url = URL(string: endpoint) else {
             print("Erroooo: Cannot create URL")
@@ -73,10 +57,15 @@ class TaskDAO {
             DispatchQueue.main.async() {
                 do {
                     if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [[String: AnyObject]] {
+                        var tasks: [Task] = [];
+
+//                        let task = Task(json: json[0])
                         
-                        let task = TaskJson(json: json[0])
+                        for task in json {
+                            tasks.append(Task(id: task["task_id"] as! Int, name: task["task_name"] as! String, status: task["task_status"] as! String, idChallenge: task["task_challenge_id"] as! Int));
+                        }
                         
-                        callback(task)
+                        callback(tasks)
                         
                     }else {
                         
