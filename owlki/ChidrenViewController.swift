@@ -23,7 +23,10 @@ class ChidrenViewController: UIViewController, UITableViewDataSource, UITableVie
         childrenList.delegate = self
         childrenList.dataSource = self
         
-        self.childrenUser = UserDAO.getList();
+        UserDAO.getChildren { (users) in
+            self.childrenUser = users;
+            self.childrenList.reloadData();
+        };
     }
 
     @IBAction func logout(_ sender: Any) {
