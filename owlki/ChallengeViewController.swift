@@ -23,22 +23,22 @@ class ChallengeViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tasks = TaskDAO.getList()
-        
         taskList.delegate = self
         taskList.dataSource = self
         
-        self.challenge = ChallengeDAO.getList().first!;
+        ChallengeDAO.getChallenge { (challenge) in
+            self.challenge = challenge.first!
+            self.reward.text? = self.challenge?.reward ?? "";
+            let deadLineArr = self.challenge!.deadLine.split(separator: "-")
+            self.deadLine.text? = "\(deadLineArr[2])/\(deadLineArr[1])/\(deadLineArr[0])"
+            self.conclusion.text? = "\(self.challenge?.percent ?? "")%";
+            self.name.text? = self.challenge?.nameUser ?? "";
+        };
         
-        self.reward.text? = self.challenge?.reward ?? "";
-        self.deadLine.text? = self.challenge?.deadLine ?? "";
-        self.conclusion.text? = self.challenge?.percent ?? "";
-        self.name.text? = self.challenge?.nameUser ?? "";
-
+        TaskDAO.getTasks { (tasks) in self.tasks = tasks; self.taskList.reloadData(); }
         
         // Do any additional setup after loading the view.
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count;
@@ -51,16 +51,13 @@ class ChallengeViewController: UIViewController, UITableViewDataSource, UITableV
             let task = tasks[indexPath.row];
             
             taskCell.task.text = task.name;
-            taskCell.status.text = task.status;
+            taskCell.status.text = (task.status == "1") ? "\u{2713}" : "\u{2717}";
             
             return taskCell;
         }
         
         return cell;
     }
-         
-         
-    
     
     /*
     // MARK: - Navigation

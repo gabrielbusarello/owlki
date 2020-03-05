@@ -37,4 +37,51 @@ class ChallengeDAO {
         ];
     }
     
+    static func getChallenge (callback: @escaping (([Challenge]) -> Void)) {
+        
+        let endpoint: String = "https://telegramjesidioapp.mybluemix.net/owlkichallenges/all"
+        
+        guard let url = URL(string: endpoint) else {
+            print("Erroooo: Cannot create URL")
+            return
+        }
+        
+        let urlRequest = URLRequest(url: url)
+        
+        let challenge = URLSession.shared.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
+            
+            if error != nil {
+                print("Error = \(String(describing: error))")
+                return
+            }
+            
+            let responseString = String(data: data!, encoding: String.Encoding.utf8)
+            print("responseString = \(String(describing: responseString))")
+            
+            DispatchQueue.main.async() {
+                do {
+                    if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [[String: AnyObject]] {
+                        var challenges: [Challenge] = [];
+                        
+                        for challenge in json {
+                            challenges.append(Challenge(id: challenge["challenge_id"] as! Int, reward: challenge["challenge_reward"] as! String, deadLine: challenge["challenge_deadline"] as! String, percent: challenge["challenge_percent"] as! String, idUser: challenge["challenge_user_id"] as! Int, nameUser: challenge["challenge_user_name"] as! String));
+                        }
+                        
+                        callback(challenges)
+                        
+                    }else {
+                        
+                        print("fudeuuuu")
+                    }
+                } catch let error as NSError {
+                    print("Error = \(error.localizedDescription)")
+                }
+            }
+            
+            
+        })
+        
+        challenge.resume()
+    }
+    
 }
