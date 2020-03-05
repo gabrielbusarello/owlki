@@ -41,10 +41,13 @@ class CreateChildViewController: UIViewController {
             self.present(alert, animated: true)
         }
         else {
-            /*UserDefaults.standard.set(true, forKey: "status");
-            UserDefaults.standard.set(false, forKey: "child");
-            Switcher.updateRootVC(vcInstance: self, sender);
-            */
+            UserDAO.createUser(id: "user10", userId: 10, user: user.text ?? "", user_name: name.text ?? "", user_password: password.text ?? "", user_father_id: UserDefaults.standard.integer(forKey: "user_id"), callback: { (user) in print(user) })
+
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "defaulthome") as! ChidrenViewController;
+
+            vc.navigationItem.setHidesBackButton(true, animated: true)
+
+            self.view.window?.rootViewController!.show(vc, sender: sender);
         }
     }
     
