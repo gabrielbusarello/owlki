@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y9H-CS-97k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y9H-CS-97k">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -82,7 +82,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ZDj-4g-Rdu"/>
+                    <navigationItem key="navigationItem" id="ZDj-4g-Rdu">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="T1w-zT-nzo"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="password" destination="iac-Fd-7cM" id="vNj-2L-cVi"/>
                         <outlet property="user" destination="eyM-HJ-5ac" id="Xf2-JY-Usk"/>
@@ -310,7 +312,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KUa-cF-ML9"/>
                     </view>
-                    <navigationItem key="navigationItem" id="w4l-It-U0L"/>
+                    <navigationItem key="navigationItem" id="w4l-It-U0L">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="FR6-aQ-gVA"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="childrenList" destination="sEb-Di-5YW" id="yrL-7V-anK"/>
                         <outlet property="welcome" destination="fMe-z1-rpk" id="rj7-Cs-3AR"/>
@@ -439,7 +443,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wrU-uc-NPW"/>
                     </view>
-                    <navigationItem key="navigationItem" id="7W3-fd-LL6"/>
+                    <navigationItem key="navigationItem" id="7W3-fd-LL6">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="3G8-Vk-n4E"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="conclusion" destination="Arc-Ng-H2s" id="VtT-H3-aPu"/>
                         <outlet property="deadLine" destination="fd6-kz-G3A" id="K5F-oK-eu3"/>
@@ -671,7 +677,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SGg-vR-vED"/>
                     </view>
-                    <navigationItem key="navigationItem" id="mEq-I4-IbB"/>
+                    <navigationItem key="navigationItem" id="mEq-I4-IbB">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="u5V-U2-Vqh"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="deadLine" destination="6UE-4L-5Mk" id="1AZ-1j-Sbb"/>
                         <outlet property="reward" destination="25M-ok-d0i" id="BTj-5z-LDZ"/>
@@ -690,7 +698,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="XUv-dZ-eUd">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="XUv-dZ-eUd">
                                 <rect key="frame" x="20" y="350" width="374" height="196"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastrar Tarefa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLE-cT-NsL">
@@ -707,6 +715,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71E-cg-Yes">
                                         <rect key="frame" x="160" y="166" width="54" height="30"/>
                                         <state key="normal" title="Salvar"/>
+                                        <connections>
+                                            <action selector="send:" destination="BbI-o7-48G" eventType="touchUpInside" id="zvf-rk-kId"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -721,11 +732,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Vf8-8N-N5j" firstAttribute="trailing" secondItem="XUv-dZ-eUd" secondAttribute="trailing" constant="20" id="BqJ-R5-UVK"/>
+                            <constraint firstItem="Vf8-8N-N5j" firstAttribute="bottom" secondItem="XUv-dZ-eUd" secondAttribute="bottom" constant="316" id="K4p-Gc-pGr"/>
                             <constraint firstItem="XUv-dZ-eUd" firstAttribute="leading" secondItem="Vf8-8N-N5j" secondAttribute="leading" constant="20" id="KCr-KX-vut"/>
+                            <constraint firstItem="XUv-dZ-eUd" firstAttribute="top" secondItem="Vf8-8N-N5j" secondAttribute="top" constant="262" id="eXZ-AK-lSx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vf8-8N-N5j"/>
                     </view>
                     <navigationItem key="navigationItem" id="KqS-wB-3XG"/>
+                    <connections>
+                        <outlet property="task" destination="BH6-Dv-Z8r" id="ts7-Vf-5ff"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qGC-4g-7W5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -18,7 +18,7 @@ class ChidrenViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        welcome.text? = "Bem vindo, Gabriel!";
+        welcome.text? = "Bem vindo, \(UserDefaults.standard.string(forKey: "user_name") ?? "")!";
         
         childrenList.delegate = self
         childrenList.dataSource = self

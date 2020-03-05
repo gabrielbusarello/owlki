@@ -10,6 +10,8 @@ import UIKit
 
 class CreateTaskViewController: UIViewController {
 
+    @IBOutlet weak var task: UITextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround();
@@ -17,7 +19,18 @@ class CreateTaskViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func send(_ sender: Any) {
+        if (task.text == "") {
+            let alert = UIAlertController(title: "Alerta!", message: "É necessário preencher a tarefa", preferredStyle: .alert);
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            //            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+            //            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+        } else {
+            
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

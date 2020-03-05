@@ -81,5 +81,54 @@ class TaskDAO {
         
         task.resume()
     }
-    
+
+//    static func createTask (callback: @escaping ((Task) -> Void)) {
+//
+//        let endpoint: String = "https://telegramjesidioapp.mybluemix.net/inserttask"
+//
+//        guard let url = URL(string: endpoint) else {
+//            print("Erroooo: Cannot create URL")
+//            return
+//        }
+//
+//        let urlRequest = URLRequest(url: url)
+//
+//        let task = URLSession.shared.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
+//
+//            if error != nil {
+//                print("Error = \(String(describing: error))")
+//                return
+//            }
+//
+//            let responseString = String(data: data!, encoding: String.Encoding.utf8)
+//            print("responseString = \(String(describing: responseString))")
+//
+//            DispatchQueue.main.async() {
+//                do {
+//                    if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [[String: AnyObject]] {
+//                        var tasks: [Task] = [];
+//
+//                        let task = Task(json: json[0])
+//
+//                        for task in json {
+//                            tasks.append(Task(id: task["task_id"] as! Int, name: task["task_name"] as! String, status: task["task_status"] as! String, idChallenge: task["task_challenge_id"] as! Int));
+//                        }
+//
+//                        callback(tasks)
+//
+//                    }else {
+//
+//                        print("fudeuuuu")
+//                    }
+//                } catch let error as NSError {
+//                    print("Error = \(error.localizedDescription)")
+//                }
+//            }
+//
+//
+//        })
+//
+//        task.resume()
+//    }
+//
 }
