@@ -39,11 +39,8 @@ class RegisterViewController: UIViewController{
         }
         else {
             UserDAO.createUser(id: "user9", userId: 9, user: user.text ?? "", user_name: name.text ?? "", user_password: password.text ?? "", user_father_id: 0, callback: { (user) in print(user) })
-//            self.view.window?.rootViewController =
-            
-            let alert = UIAlertController(title: "Alerta!", message: "Usuário cadastrado com sucesso!", preferredStyle: .alert);
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            self.present(alert, animated: true)
+
+            self.navigationController?.popToRootViewController(animated: true)
         }
     
     /*

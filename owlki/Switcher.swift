@@ -27,18 +27,8 @@ class Switcher {
             rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "login") as! ViewController;
         }
 
-//        SceneDelegate.scene(<#T##self: SceneDelegate##SceneDelegate#>)
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        appDelegate.window?.rootViewController = rootVC
         rootVC.navigationItem.setHidesBackButton(true, animated: true)
         vcInstance.view.window?.rootViewController!.show(rootVC, sender: sender);
-//        vcInstance.view.window?.rootViewController?.children.
-//        for child in vcInstance.view.window?.rootViewController?.children ?? [] {
-//            child.
-//        }
-//        if let child = vcInstance.view.window?.rootViewController?.children {
-//            child.navigationController.setNavigationBarHidden(false, animated: true)
-//        }
         
     }
     
