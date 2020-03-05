@@ -366,6 +366,15 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCZ-r2-TWu">
+                                                <rect key="frame" x="344" y="0.0" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Sair"/>
+                                                <connections>
+                                                    <action selector="logout:" destination="4cK-SQ-pY4" eventType="touchUpInside" id="OP2-o1-9hM"/>
+                                                    <action selector="logout:" destination="HGc-Ky-Jus" eventType="touchUpInside" id="VPE-Kj-jxy"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -447,8 +456,11 @@
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="3G8-Vk-n4E"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="challengeViewTop" destination="1tA-W2-SR5" id="X0I-c6-q2h"/>
                         <outlet property="conclusion" destination="Arc-Ng-H2s" id="VtT-H3-aPu"/>
+                        <outlet property="createChallengeButton" destination="EZc-Tk-dqY" id="o7u-8x-MiW"/>
                         <outlet property="deadLine" destination="fd6-kz-G3A" id="K5F-oK-eu3"/>
+                        <outlet property="logoutButton" destination="bCZ-r2-TWu" id="flR-zl-FN0"/>
                         <outlet property="name" destination="hAs-yd-OJP" id="lgA-27-b4l"/>
                         <outlet property="reward" destination="XAf-Yx-5he" id="uBP-42-EA1"/>
                         <outlet property="taskList" destination="bOV-Bw-NJt" id="94D-pj-175"/>

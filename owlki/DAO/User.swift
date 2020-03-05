@@ -173,7 +173,7 @@ class UserDAO {
                         var children: [User] = [];
                         
                         for child in json {
-                            children.append(User(id: child["user_id"] as! Int, name: child["user_name"] as! String, user: child["user"] as! String, password: child["user_password"] as! String, idFather: child["user_father_id"] as! Int))
+                            children.append(User(id: child["user_id"] as! Int, name: child["user_name"] as! String, user: child["user"] as! String, password: child["user_password"] as! String, idFather: child["user_father_id"] as? Int))
                         }
                         
                         callback(children)
@@ -184,6 +184,50 @@ class UserDAO {
                     }
                 } catch let error as NSError {
                     callback([User(id: 0, name: "", user: "", password: "")])
+                    print("Error = \(error.localizedDescription)")
+                }
+            }
+            
+            
+        })
+        
+        task.resume()
+    }
+
+    static func getLastUser (callback: @escaping ((User) -> Void)) {
+        
+        let endpoint: String = "https://telegramjesidioapp.mybluemix.net/owlkiusers/last";
+        
+        guard let url = URL(string: endpoint) else {
+            print("Erroooo: Cannot create URL")
+            return
+        }
+        
+        let urlRequest = URLRequest(url: url)
+        
+        let task = URLSession.shared.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
+            
+            if error != nil {
+                print("Error = \(String(describing: error))")
+                return
+            }
+            
+            DispatchQueue.main.async() {
+                do {
+                    if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: AnyObject] {
+                        
+                        var user: User;
+                        
+                        user = User(id: json["user_id"] as! Int, name: json["user_name"] as! String, user: json["user"] as! String, password: json["user_password"] as! String, idFather: json["user_father_id"] as? Int)
+                        
+                        callback(user)
+                        
+                    }else {
+                        
+                        print("fudeuuuu")
+                    }
+                } catch let error as NSError {
+                    callback(User(id: 0, name: "", user: "", password: ""))
                     print("Error = \(error.localizedDescription)")
                 }
             }

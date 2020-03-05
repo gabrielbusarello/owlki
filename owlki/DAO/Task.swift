@@ -33,9 +33,9 @@ class TaskDAO {
         ];
     }
 
-    static func getTasks (callback: @escaping (([Task]) -> Void)) {
+    static func getTasks (idChallenge: Int, callback: @escaping (([Task]) -> Void)) {
         
-        let endpoint: String = "https://telegramjesidioapp.mybluemix.net/owlkitasks/all"
+        let endpoint: String = "https://telegramjesidioapp.mybluemix.net/owlkitasks/tasks/\(idChallenge)"
         
         guard let url = URL(string: endpoint) else {
             print("Erroooo: Cannot create URL")

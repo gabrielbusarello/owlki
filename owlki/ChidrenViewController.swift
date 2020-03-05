@@ -37,13 +37,9 @@ class ChidrenViewController: UIViewController, UITableViewDataSource, UITableVie
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "childChallenge" {
-//            if let musicView = segue.destination as? MusicViewController,
-//                let index = tableView.indexPathForSelectedRow?.row {
-//                musicView.musicReciver = musics[index];
-//            }
-        } else if segue.identifier == "createChild" {
-            if let createChildView = segue.destination as? CreateChildViewController {
-                createChildView.idUser? = 1; // Mudar isso!!!
+            if let challengeView = segue.destination as? ChallengeViewController,
+                let index = childrenList.indexPathForSelectedRow?.row {
+                challengeView.idUser = childrenUser[index].id;
             }
         }
     }

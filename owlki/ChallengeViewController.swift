@@ -15,28 +15,42 @@ class ChallengeViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var reward: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var taskList: UITableView!
+    @IBOutlet weak var challengeViewTop: UIView!
+    @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var createChallengeButton: UIButton!
     
     var tasks = [Task]();
     
     var challenge: Challenge?;
-
+    var idUser: Int?;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         taskList.delegate = self
         taskList.dataSource = self
         
-        ChallengeDAO.getChallenge { (challenge) in
-            self.challenge = challenge.first!
+        ChallengeDAO.getChallenge(idUser: idUser ?? UserDefaults.standard.integer(forKey: "user_id")) { (challenge) in
+            self.challenge = challenge;
             self.reward.text? = self.challenge?.reward ?? "";
             let deadLineArr = self.challenge!.deadLine.split(separator: "-")
             self.deadLine.text? = "\(deadLineArr[2])/\(deadLineArr[1])/\(deadLineArr[0])"
             self.conclusion.text? = "\(self.challenge?.percent ?? "")%";
             self.name.text? = self.challenge?.nameUser ?? "";
+            
+            let nmbPercent = (Double)(self.challenge!.percent)!;
+            self.challengeViewTop.backgroundColor = nmbPercent < 33 ? UIColor.red : (nmbPercent < 66 ? UIColor.yellow : UIColor.green)
+
+            TaskDAO.getTasks (idChallenge: self.challenge!.id) { (tasks) in self.tasks = tasks; self.taskList.reloadData(); }
         };
         
-        TaskDAO.getTasks { (tasks) in self.tasks = tasks; self.taskList.reloadData(); }
-        
+        if (UserDefaults.standard.integer(forKey: "father_id") == 0) {
+            self.logoutButton.isHidden = true;
+            self.createChallengeButton.isHidden = false;
+        } else {
+            self.logoutButton.isHidden = false;
+            self.createChallengeButton.isHidden = true;
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -58,15 +72,21 @@ class ChallengeViewController: UIViewController, UITableViewDataSource, UITableV
         
         return cell;
     }
-    
-    /*
-    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "createChallenge") {
+            if let cchallengeView = segue.destination as? CreateChallengeViewController {
+                cchallengeView.idUser = self.challenge?.idUser;
+            }
+        }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+
+    @IBAction func logout(_ sender: Any) {
+        UserDefaults.standard.set(false, forKey: "status")
+        Switcher.updateRootVC(vcInstance: self, sender);
+    }
 
 }

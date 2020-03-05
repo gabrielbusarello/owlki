@@ -16,20 +16,23 @@ class CreateChallengeViewController: UIViewController, UITableViewDataSource, UI
 
     var challenge: Challenge?;
     var tasks = [Task]();
+    
+    var idUser: Int?;
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         taskList.delegate = self
         taskList.dataSource = self
+        
+        ChallengeDAO.getChallenge (idUser: idUser ?? 0) { (challenge) in
+            self.challenge = challenge;
+            self.reward.text? = self.challenge?.reward ?? "";
+            let deadLineArr = self.challenge!.deadLine.split(separator: "-")
+            self.deadLine.text? = "\(deadLineArr[2])/\(deadLineArr[1])/\(deadLineArr[0])"
 
-        self.challenge = ChallengeDAO.getList().first!;
-//        self.tasks = TaskDAO.getList()
-        // Do any additional setup after loading the view.
-        TaskDAO.getTasks { (tasks) in self.tasks = tasks; self.taskList.reloadData(); }
-
-        self.reward.text? = self.challenge?.reward ?? "";
-        self.deadLine.text? = self.challenge?.deadLine ?? "";
+            TaskDAO.getTasks (idChallenge: self.challenge!.id) { (tasks) in self.tasks = tasks; self.taskList.reloadData(); }
+        };
 
         self.hideKeyboardWhenTappedAround();
     }

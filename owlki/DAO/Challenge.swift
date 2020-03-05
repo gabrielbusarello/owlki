@@ -37,9 +37,9 @@ class ChallengeDAO {
         ];
     }
     
-    static func getChallenge (callback: @escaping (([Challenge]) -> Void)) {
-        
-        let endpoint: String = "https://telegramjesidioapp.mybluemix.net/owlkichallenges/all"
+    static func getChallenge (idUser: Int, callback: @escaping ((Challenge) -> Void)) {
+        print(idUser)
+        let endpoint: String = "https://telegramjesidioapp.mybluemix.net/owlkichallenges/challenge/\(idUser)"
         
         guard let url = URL(string: endpoint) else {
             print("Erroooo: Cannot create URL")
@@ -60,14 +60,12 @@ class ChallengeDAO {
             
             DispatchQueue.main.async() {
                 do {
-                    if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [[String: AnyObject]] {
-                        var challenges: [Challenge] = [];
+                    if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: AnyObject] {
+                        var challenge: Challenge;
+                    
+                        challenge = Challenge(id: json["challenge_id"] as! Int, reward: json["challenge_reward"] as! String, deadLine: json["challenge_deadline"] as! String, percent: json["challenge_percent"] as! String, idUser: json["challenge_user_id"] as! Int, nameUser: json["challenge_user_name"] as! String);
                         
-                        for challenge in json {
-                            challenges.append(Challenge(id: challenge["challenge_id"] as! Int, reward: challenge["challenge_reward"] as! String, deadLine: challenge["challenge_deadline"] as! String, percent: challenge["challenge_percent"] as! String, idUser: challenge["challenge_user_id"] as! Int, nameUser: challenge["challenge_user_name"] as! String));
-                        }
-                        
-                        callback(challenges)
+                        callback(challenge)
                         
                     }else {
                         
