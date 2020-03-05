@@ -38,9 +38,13 @@ class RegisterViewController: UIViewController{
             self.present(alert, animated: true)
         }
         else {
-            UserDAO.createUser(id: "user9", userId: 9, user: user.text ?? "", user_name: name.text ?? "", user_password: password.text ?? "", user_father_id: 0, callback: { (user) in print(user) })
+            UserDAO.getLastUser { (userLU) in
+                if (userLU.id != 0) {
+                    UserDAO.createUser(id: "user\(userLU.id + 1)", userId: userLU.id + 1, user: self.user.text ?? "", user_name: self.name.text ?? "", user_password: self.password.text ?? "", user_father_id: 0, callback: { (user) in print(user) })
 
-            self.navigationController?.popToRootViewController(animated: true)
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
+            }
         }
     
     /*

@@ -41,13 +41,17 @@ class CreateChildViewController: UIViewController {
             self.present(alert, animated: true)
         }
         else {
-            UserDAO.createUser(id: "user10", userId: 10, user: user.text ?? "", user_name: name.text ?? "", user_password: password.text ?? "", user_father_id: UserDefaults.standard.integer(forKey: "user_id"), callback: { (user) in print(user) })
+            UserDAO.getLastUser { (userLU) in
+                if (userLU.id != 0) {
+                    UserDAO.createUser(id: "user\(userLU.id + 1)", userId: userLU.id + 1, user: self.user.text ?? "", user_name: self.name.text ?? "", user_password: self.password.text ?? "", user_father_id: UserDefaults.standard.integer(forKey: "user_id"), callback: { (user) in print(user) })
 
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "defaulthome") as! ChidrenViewController;
+                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "defaulthome") as! ChidrenViewController;
 
-            vc.navigationItem.setHidesBackButton(true, animated: true)
+                    vc.navigationItem.setHidesBackButton(true, animated: true)
 
-            self.view.window?.rootViewController!.show(vc, sender: sender);
+                    self.view.window?.rootViewController!.show(vc, sender: sender);
+                }
+            }
         }
     }
     
