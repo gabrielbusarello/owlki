@@ -43,5 +43,109 @@ class UserDAO {
             User(id: 6, name: "Walter Junior", user: "waltinhoJJ", password: "Walter", idFather: 5)
         ];
     }
+        
+    static func loginUser (user: String, password: String, callback: @escaping ((User) -> Void)) {
+        
+        let endpoint: String = "https://telegramjesidioapp.mybluemix.net/login/\(user)/\(password)";
+        
+        guard let url = URL(string: endpoint) else {
+            print("Erroooo: Cannot create URL")
+            return
+        }
+        
+        let urlRequest = URLRequest(url: url)
+        
+        let task = URLSession.shared.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
+            
+            if error != nil {
+                print("Error = \(String(describing: error))")
+                return
+            }
+            
+            DispatchQueue.main.async() {
+                do {
+                    if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: AnyObject] {
+                        var user: User;
+
+                        user = User(id: json["user_id"] as! Int, name: json["user_name"] as! String, user: json["user"] as! String, password: json["user_password"] as! String, idFather: json["user_father_id"] as? Int)
+
+                        callback(user)
+
+                    }else {
+                        
+                        print("fudeuuuu")
+                    }
+                } catch let error as NSError {
+                    callback(User(id: 0, name: "", user: "", password: ""))
+                    print("Error = \(error.localizedDescription)")
+                }
+            }
+            
+            
+        })
+        
+        task.resume()
+    }
+    
+
+    static func createUser(id: String, userId: Int, user: String, user_name: String, user_password: String, user_father_id: Int, callback: @escaping ((User) -> Void)) {
+
+        let endpoint: String = "https://telegramjesidioapp.mybluemix.net/insertuser"
+
+        guard let url = URL(string: endpoint) else {
+            print("Erroooo: Cannot create URL")
+            return
+        }
+
+        var urlRequest = URLRequest(url: url)
+
+        let parameters: [String: Any] = [
+            "_id": id, "user_id": userId, "user": user, "user_name": user_name, "user_password": user_password, "user_father_id": user_father_id
+        ];
+        
+        do {
+            urlRequest.httpMethod = "POST"
+            urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
+            urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
+
+            let task = URLSession.shared.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
+
+                if error != nil {
+                    print("Error = \(String(describing: error))")
+                    return
+                }
+
+                let responseString = String(data: data!, encoding: String.Encoding.utf8)
+                print("responseString = \(String(describing: responseString))")
+
+                DispatchQueue.main.async() {
+                    do {
+                        if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: AnyObject] {
+                            var user: User
+
+    //                        let task = Task(json: json[0])
+
+                            user = User(id: json["user_id"] as! Int, name: json["user_name"] as! String, user: json["user"] as! String, password: json["user_password"] as! String, idFather: json["user_father_id"] as? Int);
+
+                            callback(user)
+
+                        }else {
+
+                            print("fudeuuuu")
+                        }
+                    } catch let error as NSError {
+                        print("Error = \(error.localizedDescription)")
+                    }
+                }
+
+
+            })
+
+            task.resume()
+        } catch {
+            print("Deu ruim");
+        }
+    }
     
 }

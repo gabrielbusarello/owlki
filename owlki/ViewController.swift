@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func login(_ sender: Any) {
-        loginUser(user: user.text!, password: password.text!, callback: { (user) in
+        UserDAO.loginUser(user: user.text!, password: password.text!, callback: { (user) in
             if (user.id != 0) {
                 UserDefaults.standard.set(true, forKey: "status");
                 UserDefaults.standard.set(user.idFather == 1, forKey: "child");
@@ -37,51 +37,6 @@ class ViewController: UIViewController {
                 self.present(alert, animated: true)
             }
         });
-    }
-    
-    private func loginUser (user: String, password: String, callback: @escaping ((User) -> Void)) {
-        
-        let endpoint: String = "https://telegramjesidioapp.mybluemix.net/login/\(user)/\(password)";
-        
-        guard let url = URL(string: endpoint) else {
-            print("Erroooo: Cannot create URL")
-            return
-        }
-        
-        let urlRequest = URLRequest(url: url)
-//        JSONEncoder()
-//        urlRequest.httpBody = JSONEncoder("");
-        
-        let task = URLSession.shared.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
-            
-            if error != nil {
-                print("Error = \(String(describing: error))")
-                return
-            }
-            
-            DispatchQueue.main.async() {
-                do {
-                    if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: AnyObject] {
-                        var user: User;
-
-                        user = User(id: json["user_id"] as! Int, name: json["user_name"] as! String, user: json["user"] as! String, password: json["user_password"] as! String, idFather: json["user_father_id"] as? Int)
-
-                        callback(user)
-
-                    }else {
-                        
-                        print("fudeuuuu")
-                    }
-                } catch let error as NSError {
-                    callback(User(id: 0, name: "", user: "", password: ""))
-                    print("Error = \(error.localizedDescription)")
-                }
-            }
-            
-            
-        })
-        
-        task.resume()
     }
 
 

@@ -38,10 +38,12 @@ class RegisterViewController: UIViewController{
             self.present(alert, animated: true)
         }
         else {
-            /*UserDefaults.standard.set(true, forKey: "status");
-            UserDefaults.standard.set(false, forKey: "child");
-            Switcher.updateRootVC(vcInstance: self, sender);
-            */
+            UserDAO.createUser(id: "user9", userId: 9, user: user.text ?? "", user_name: name.text ?? "", user_password: password.text ?? "", user_father_id: 0, callback: { (user) in print(user) })
+//            self.view.window?.rootViewController =
+            
+            let alert = UIAlertController(title: "Alerta!", message: "Usuário cadastrado com sucesso!", preferredStyle: .alert);
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
         }
     
     /*
