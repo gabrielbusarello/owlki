@@ -15,10 +15,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="center" ambiguous="YES" axis="vertical" alignment="center" spacing="83" translatesAutoresizingMaskIntoConstraints="NO" id="As5-Tv-qYj">
-                                <rect key="frame" x="20" y="267" width="374" height="363"/>
+                            <stackView opaque="NO" contentMode="center" axis="vertical" alignment="center" spacing="83" translatesAutoresizingMaskIntoConstraints="NO" id="As5-Tv-qYj">
+                                <rect key="frame" x="20" y="188" width="374" height="574"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J7M-gG-GPJ">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="The OwlKi" translatesAutoresizingMaskIntoConstraints="NO" id="J7M-gG-GPJ">
                                         <rect key="frame" x="137" y="0.0" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="JVI-bf-mCT"/>
@@ -26,7 +26,7 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="8li-MF-l48">
-                                        <rect key="frame" x="56.5" y="183" width="261" height="180"/>
+                                        <rect key="frame" x="56.5" y="183" width="261" height="391"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuário" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eyM-HJ-5ac">
                                                 <rect key="frame" x="20" y="0.0" width="221" height="34"/>
@@ -39,17 +39,17 @@
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="Fui-3E-WgW">
-                                                <rect key="frame" x="20" y="150" width="221" height="30"/>
+                                                <rect key="frame" x="20" y="150" width="221" height="241"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6aS-Zk-CAw">
-                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
+                                                        <rect key="frame" x="0.0" y="105.5" width="90" height="30"/>
                                                         <state key="normal" title="Entrar"/>
                                                         <connections>
                                                             <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sde-f6-rKf"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNv-MS-3fQ">
-                                                        <rect key="frame" x="131" y="0.0" width="90" height="30"/>
+                                                        <rect key="frame" x="131" y="105.5" width="90" height="30"/>
                                                         <state key="normal" title="Cadastrar-se"/>
                                                         <connections>
                                                             <segue destination="r0P-l9-hKU" kind="show" identifier="createUser" id="Puj-3N-XRo"/>
@@ -79,6 +79,8 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="As5-Tv-qYj" secondAttribute="trailing" constant="20" id="6Sk-3J-lhp"/>
                             <constraint firstItem="As5-Tv-qYj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="QZB-IZ-11t"/>
+                            <constraint firstItem="As5-Tv-qYj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="kVF-r9-S76"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="As5-Tv-qYj" secondAttribute="bottom" constant="100" id="qUN-Xi-L2M"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -106,10 +108,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="center" ambiguous="YES" axis="vertical" alignment="center" spacing="83" translatesAutoresizingMaskIntoConstraints="NO" id="Wow-xe-0UZ">
-                                        <rect key="frame" x="20" y="267" width="374" height="438"/>
+                                    <stackView opaque="NO" contentMode="center" axis="vertical" alignment="center" spacing="83" translatesAutoresizingMaskIntoConstraints="NO" id="Wow-xe-0UZ">
+                                        <rect key="frame" x="20" y="188" width="374" height="574"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ApC-J3-NPI">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="The OwlKi" translatesAutoresizingMaskIntoConstraints="NO" id="ApC-J3-NPI">
                                                 <rect key="frame" x="137" y="0.0" width="100" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="KV1-zK-F94"/>
@@ -117,7 +119,7 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="OEk-Vf-fVK">
-                                                <rect key="frame" x="20" y="183" width="334" height="255"/>
+                                                <rect key="frame" x="20" y="183" width="334" height="391"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u4d-Nx-x41">
                                                         <rect key="frame" x="20" y="0.0" width="294" height="34"/>
@@ -135,10 +137,10 @@
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                     </textField>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="yBU-gF-4Iq">
-                                                        <rect key="frame" x="20" y="225" width="294" height="30"/>
+                                                        <rect key="frame" x="20" y="225" width="294" height="166"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Frj-wb-cvx">
-                                                                <rect key="frame" x="0.0" y="0.0" width="294" height="30"/>
+                                                                <rect key="frame" x="0.0" y="68" width="294" height="30"/>
                                                                 <state key="normal" title="Cadastrar-se"/>
                                                                 <connections>
                                                                     <action selector="register:" destination="r0P-l9-hKU" eventType="touchUpInside" id="s8k-eE-ccH"/>
@@ -172,7 +174,9 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="Oah-7m-hei" firstAttribute="trailing" secondItem="Wow-xe-0UZ" secondAttribute="trailing" constant="20" id="1ZY-Qc-qhH"/>
+                                    <constraint firstItem="Wow-xe-0UZ" firstAttribute="top" secondItem="Oah-7m-hei" secondAttribute="top" constant="100" id="Smz-dP-zvz"/>
                                     <constraint firstItem="Wow-xe-0UZ" firstAttribute="leading" secondItem="Oah-7m-hei" secondAttribute="leading" constant="20" id="bIQ-y2-swo"/>
+                                    <constraint firstItem="Oah-7m-hei" firstAttribute="bottom" secondItem="Wow-xe-0UZ" secondAttribute="bottom" constant="100" id="zP3-wP-qSe"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="Oah-7m-hei"/>
                             </view>
@@ -483,7 +487,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="center" axis="vertical" alignment="center" spacing="83" translatesAutoresizingMaskIntoConstraints="NO" id="njd-KU-xj8">
-                                        <rect key="frame" x="20" y="267" width="374" height="368"/>
+                                        <rect key="frame" x="20" y="188" width="374" height="574"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastrar Filho" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVc-Y4-SUx">
                                                 <rect key="frame" x="105" y="0.0" width="164" height="30"/>
@@ -492,28 +496,28 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="GV1-It-lYX">
-                                                <rect key="frame" x="20" y="113" width="334" height="255"/>
+                                                <rect key="frame" x="0.0" y="113" width="374" height="461"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lba-xr-AAs">
-                                                        <rect key="frame" x="20" y="0.0" width="294" height="34"/>
+                                                        <rect key="frame" x="20" y="0.0" width="334" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuário" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cxq-13-4zE">
-                                                        <rect key="frame" x="20" y="75" width="294" height="34"/>
+                                                        <rect key="frame" x="20" y="75" width="334" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gsz-m6-6iI">
-                                                        <rect key="frame" x="20" y="150" width="294" height="34"/>
+                                                        <rect key="frame" x="20" y="150" width="334" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                     </textField>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="9h6-LJ-dj1">
-                                                        <rect key="frame" x="20" y="225" width="294" height="30"/>
+                                                        <rect key="frame" x="20" y="225" width="334" height="236"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9P8-Da-c6i">
-                                                                <rect key="frame" x="0.0" y="0.0" width="294" height="30"/>
+                                                                <rect key="frame" x="0.0" y="103" width="334" height="30"/>
                                                                 <state key="normal" title="Cadastrar"/>
                                                                 <connections>
                                                                     <action selector="cadastra:" destination="fT0-fH-Ghz" eventType="touchUpInside" id="XNn-0O-30x"/>
@@ -539,17 +543,19 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="GV1-It-lYX" firstAttribute="top" secondItem="FVc-Y4-SUx" secondAttribute="bottom" constant="83" id="2OP-K0-ixa"/>
-                                            <constraint firstItem="GV1-It-lYX" firstAttribute="leading" secondItem="njd-KU-xj8" secondAttribute="leading" constant="20" id="F4T-wW-nDD"/>
-                                            <constraint firstAttribute="trailing" secondItem="GV1-It-lYX" secondAttribute="trailing" constant="20" id="Rse-bk-JqT"/>
+                                            <constraint firstAttribute="bottom" secondItem="GV1-It-lYX" secondAttribute="bottom" id="34t-cw-wZb"/>
+                                            <constraint firstAttribute="trailing" secondItem="GV1-It-lYX" secondAttribute="trailing" id="MTa-OI-vun"/>
+                                            <constraint firstItem="GV1-It-lYX" firstAttribute="leading" secondItem="njd-KU-xj8" secondAttribute="leading" id="bM8-wi-p0Q"/>
+                                            <constraint firstItem="GV1-It-lYX" firstAttribute="top" secondItem="FVc-Y4-SUx" secondAttribute="bottom" constant="83" id="wAy-zp-M8W"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="njd-KU-xj8" firstAttribute="leading" secondItem="JiT-zR-pkj" secondAttribute="leading" constant="20" id="1po-Kp-NJB"/>
-                                    <constraint firstItem="njd-KU-xj8" firstAttribute="top" secondItem="JiT-zR-pkj" secondAttribute="top" constant="179" id="CNd-MH-bcm"/>
-                                    <constraint firstItem="JiT-zR-pkj" firstAttribute="bottom" secondItem="njd-KU-xj8" secondAttribute="bottom" constant="227" id="Led-UZ-idH"/>
-                                    <constraint firstItem="JiT-zR-pkj" firstAttribute="trailing" secondItem="njd-KU-xj8" secondAttribute="trailing" constant="20" id="UCg-HG-RGA"/>
+                                    <constraint firstItem="njd-KU-xj8" firstAttribute="leading" secondItem="JiT-zR-pkj" secondAttribute="leading" constant="20" id="C0E-cI-c25"/>
+                                    <constraint firstItem="JiT-zR-pkj" firstAttribute="bottom" secondItem="njd-KU-xj8" secondAttribute="bottom" constant="100" id="Llk-fQ-Ra3"/>
+                                    <constraint firstItem="njd-KU-xj8" firstAttribute="top" secondItem="JiT-zR-pkj" secondAttribute="top" constant="100" id="Rah-Bl-cbi"/>
+                                    <constraint firstItem="JiT-zR-pkj" firstAttribute="trailing" secondItem="njd-KU-xj8" secondAttribute="trailing" constant="20" id="zbg-Oa-2Q1"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="JiT-zR-pkj"/>
                             </view>
@@ -778,4 +784,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="849.77678571428567"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="The OwlKi" width="100" height="100"/>
+    </resources>
 </document>
